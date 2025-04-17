@@ -12,11 +12,14 @@ body {
 .header {
     position: relative;
     display: block;
+    margin: 0;
+    padding: 0;
 }
 
 .header img:first-child {
     width: 100%; 
     height: auto; 
+    display: block;
 }
 
 #logo {
@@ -31,6 +34,9 @@ body {
 
 .header h1 {
     position: absolute;
+    bottom: -170px;
+    right: 16px;
+    color: white;
 }
 
 .header p {
@@ -65,14 +71,11 @@ nav a:hover {
 
 nav {
     background-color: #1F5665;
-    margin-top: 0;
-    margin-bottom: 0;
     padding: 35px;
-
 }
 
 main {
-    background-color: #fae9e2;
+    background-color: transparent;
     border-radius: 20px;
     padding: 20px;
     margin: 10px;
@@ -83,7 +86,39 @@ main li {
 }
 
 #grid-container {
+    display: grid;
     grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0;
+}
+.grid-item {
+    background-color: #fae9e2;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.room-list {
+    list-style-type: circle;
+}
+
+.grid-item-title {
+    background-color: #fae9e2;
+    padding: 10px;
+    border-radius: 40px;
+    margin: 0;
+    box-sizing: border-box;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.buttons {
+    list-style: none;
+}
+
+.buttons:hover {
+    color: #84d5ec;
 }
 
   #Experience,
@@ -101,8 +136,20 @@ h3 {
 
 footer {
     background-color: #1F5665;
-    text-align: center;
     padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+footer img {
+    height: 30px;
+    width: auto;
+}
+
+footer small {
+    color: white;
 }
 
 /* laptop */
@@ -113,38 +160,44 @@ footer {
         gap: 20px; 
       }
     
-      #Experience,
-      #Accommodations,
+      #grid-container {
+        grid-template-columns: 1fr 1fr 1fr; 
+        grid-template-rows: auto;
+        grid-template-areas:
+          "top top top"
+          "left right aside"; 
+      }
+    
+      #grid-container > .grid-item:first-child {
+        grid-column: span 3; 
+      }
+    
+      #grid-container > .grid-item:nth-child(2) {
+        grid-column: 1; 
+      }
+    
+      #grid-container > .grid-item:nth-child(3) {
+        grid-column: 2; 
+      }
+    
       aside {
-        background-color: #fae9e2; 
-        padding: 15px; 
-        border-radius: 8px; 
+        grid-column: 1 / span 2;
       }
-    
-      #GuestTestimonials {
-        grid-column: span 1;
-      }
-    
-      #Experience,
-      #Accommodations {
-        grid-column: span 1;
-      }
-    
+      
       h3 {
         text-align: center;
       }
     }
 
-    .header img {
+    .header img:first-child{
         width: 100%;           
         height: 400px;         
         object-fit: cover; 
-        display: block;
       }
 
       .header h1 {
-        top: 275px;
-        left: 980px;
+        height: 400px;
+        overflow: hidden;
     }
 
     #grid-container {
@@ -162,15 +215,43 @@ footer {
       
 
 /* tablet */
-@media screen and (min-width: 700px){
-    .header img {
-        width: 100%; 
-        height: 400px; 
-        object-fit: cover; 
+@media screen and (min-width: 768px){
+      #grid-container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+            "top top top"
+            "mid1 mid2 aside";
       }
 
-      .header h1 {
+      #grid-container > :nth-child(1) {
+        grid-area: top;
+      }
+    
+      #grid-container > :nth-child(2) {
+        grid-area: mid1;
+      }
+    
+      #grid-container > :nth-child(3) {
+        grid-area: mid2;
+      }
+    
+      #grid-container > aside {
+        grid-area: aside;
+      }
+
+      aside {
+        max-height: 430px;
+        padding-top: 5px;
+        border-radius: 50px;
+        display: block;
+      };
+
+    .header h1 {
         top: 230px;
-        left: 450px;
+        left: 400px;
+    }
+    
+    p {
+        text-align: center;
     }
 }
