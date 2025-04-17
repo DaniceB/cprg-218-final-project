@@ -7,10 +7,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+<body>
 <header>
     <section class="header">
-    <h1>Shangri La Beach Resort</h1>
-    <h2>Your Dream Getaway</h2>
+    <img src="media/hero final.jpg" alt="Sunset behind the pool of the Resort"
+    style="width: 100%;">
+    <h1>Your Dream Getaway</h1>
     <p>Current conditions 28&deg;C. &#127780; Wind 19 km/h</p>
     <nav>
         <ul>
@@ -25,11 +27,12 @@
     </section>
 </header>
 
-<body>
-    <h3>Escape to Paradise</h3>
-    <p>Indulge in luxury and breathtaking views at Shangri La Beach Resort.</p>
+<div id="grid-container">
+<main>
+        <h3>Escape to Paradise</h3>
+        <p>Indulge in luxury and breathtaking views at Shangri La Beach Resort.</p>
 
-    <section>
+    <section id="Experience">
         <h3>Experience Unforgettable Moments</h3>
         <h4>Private Beach Access</h4>
         <p>Step onto our pristine, white-sand beach.</p>
@@ -41,7 +44,7 @@
         <p>Savor culinary delights at our restaurants.</p>
     </section>
 
-    <section>
+    <section id="Accommodations">
         <h3>Our Luxurious Accommodations</h3>
         <h4>Ocean View Deluxe Room</h4>
         <p>Enjoy stunning ocean views from your private balcony.</p>
@@ -60,7 +63,7 @@
             </ul>
     </section>
 
-    <section>
+    <aside>
         <h3>What Our Guests Are Saying</h3>
         <p>"Our stay at Shangri La was absolutely perfect! The service was impeccable, and the views were breathtaking."
 
@@ -73,5 +76,13 @@
             <ul>
                 <li>[Read More Testimonials]</li>
             </ul>
-    </section>
+        </aside>
+</main>
+</div>
+
+    <footer>
+        <small>&copy; Shangri-La Beach Resort <span id="year"></span></small>
+    </footer>
+    <script defer src="script.js"></script>
 </body>
+</html>
